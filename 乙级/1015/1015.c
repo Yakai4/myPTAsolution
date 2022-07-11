@@ -1,9 +1,17 @@
+/*
+流程：
+把所有满足最低分的数据读入
+然后从头扫描把满足要求的数据的地址放入ord数组中，pA、pB、pC、pD是各类数据的首尾
+对0-pA-1，pA-pB-1，pB-pC-1，pC-pD-1四段各自进行排序
+pD表示的数字就是满足要求的成绩总数
+输出结果。
+*/
 #include <stdio.h>
 #include <string.h>
 
 typedef struct
 {
-        char id[9];
+        char id[9];//it should be 9  to contain 8 characters:)
         int merit,talent;
 } stu;
 int total(stu* a)
