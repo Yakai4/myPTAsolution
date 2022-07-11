@@ -92,36 +92,39 @@ int main(void)
                 //ord[k]=&group[k];
                 k++;
                 //printf("now N is %d\n",N);
-        }		
-				int pA=0,pB=0,pC=0,pD=0;
-				for(int i=0;i<k;++i) 
-				{
-					if(group[i].merit>=H && group[i].talent>=H )pB++;
-					else if(group[i].talent<H && group[i].merit>=H)	pC++;
-					else if(group[i].talent<H && group[i].merit<H && (group[i].merit >= group[i].talent))	pD++;
-				}
-				pC+=pB;
-				pD+=pC;
-				for(int i=0;i<k;++i)
-				{
-					if(group[i].merit>=H && group[i].talent>=H){
-						ord[pA] = &group[i];
-						pA++;
-					} else if(group[i].talent<H && group[i].merit>=H){
-						ord[pB] = &group[i];
-						pB++;
-					} else if(group[i].talent<H && group[i].merit<H && (group[i].merit >= group[i].talent)){
-						ord[pC] = &group[i];
-						pC++;
-					} else {
-						ord[pD] = &group[i];
-						pD++;
-					}
-				}
-		qsort(ord,0,pA-1);
-		qsort(ord,pA,pB-1);
-		qsort(ord,pB,pC-1);
-		qsort(ord,pC,pD-1);
+        }	
+	
+	int pA=0,pB=0,pC=0,pD=0;
+	for(int i=0;i<k;++i) 
+	{
+		if(group[i].merit>=H && group[i].talent>=H )pB++;
+		else if(group[i].talent<H && group[i].merit>=H)	pC++;
+		else if(group[i].talent<H && group[i].merit<H && (group[i].merit >= group[i].talent))	pD++;
+	}
+	pC+=pB;
+	pD+=pC;
+	for(int i=0;i<k;++i)
+	{
+		if(group[i].merit>=H && group[i].talent>=H){
+			ord[pA] = &group[i];
+			pA++;
+		} else if(group[i].talent<H && group[i].merit>=H){
+			ord[pB] = &group[i];
+			pB++;
+		} else if(group[i].talent<H && group[i].merit<H && (group[i].merit >= group[i].talent)){
+			ord[pC] = &group[i];
+			pC++;
+		} else {
+			ord[pD] = &group[i];
+			pD++;
+		}
+	}
+	//qsort each calss
+	qsort(ord,0,pA-1);
+	qsort(ord,pA,pB-1);
+	qsort(ord,pB,pC-1);
+	qsort(ord,pC,pD-1);
+	//print result
         printf("%d\n",pD);
         //printf("class 1:\n");
         for(int i=0;i<pA;i++)
