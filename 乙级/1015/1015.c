@@ -127,7 +127,7 @@ int main(void)
 			pD++;
 		}
 	}
-	//qsort each calss
+	//qsort each class
 	qsort(ord,0,pA-1);
 	qsort(ord,pA,pB-1);
 	qsort(ord,pB,pC-1);
@@ -136,24 +136,18 @@ int main(void)
         printf("%d\n",pD);
         //printf("class 1:\n");
         for(int i=0;i<pA;i++)
-        {
-				printf("%s %d %d\n",ord[i]->id,ord[i]->merit,ord[i]->talent);
-		}
+		printf("%s %d %d\n",ord[i]->id,ord[i]->merit,ord[i]->talent);
+		
 		//printf("class 2:\n");
-		for(int i=pA;i<pB;i++)
-        {
-				printf("%s %d %d\n",ord[i]->id,ord[i]->merit,ord[i]->talent);
-		}
+	for(int i=pA;i<pB;i++)
+		printf("%s %d %d\n",ord[i]->id,ord[i]->merit,ord[i]->talent);
+		
 		//printf("class 3:\n");
-		for(int i=pB;i<pC;i++)
-        {
-				printf("%s %d %d\n",ord[i]->id,ord[i]->merit,ord[i]->talent);
-		}
+	for(int i=pB;i<pC;i++)
+		printf("%s %d %d\n",ord[i]->id,ord[i]->merit,ord[i]->talent);
 		//printf("class 4:\n");
-		for(int i=pC;i<pD;i++)
-        {
-				printf("%s %d %d\n",ord[i]->id,ord[i]->merit,ord[i]->talent);
-		}
+	for(int i=pC;i<pD;i++)
+		printf("%s %d %d\n",ord[i]->id,ord[i]->merit,ord[i]->talent);
 		//printf("%s > %s = %d",ord[0]->id, ord[1]->id, strcmp(ord[0]->id, ord[1]->id));
         return 0;
 }
