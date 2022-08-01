@@ -15,7 +15,7 @@ int main(void)
                 cnt[i]--;
                 j--;
             }
-            while(i==0 && j>0)  {max*=10;j--;}
+            while(i==0 && j>0)  {max*=10;j--;}//for example 101
         }
         for(int i=0,temp=max;i<4;i++){
             min = 10*min + temp%10;
