@@ -26,7 +26,7 @@ int main(void)
             min = max - min;
             max = max - min;
         }
-        t = max -min;
+        t = max - min;
         printf("%04d - %04d = %04d\n", max, min, t);
         if(t==Kaprekar || t==0) break;
         max=0;min=0;
