@@ -1,13 +1,13 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-void c_print(int, int);
-int isPrime(int);
+void c_print(long, int);
+int isPrime(long);
 
 int main()
 { 
     int L,K,i,j,p=0,flag=0;
-    int sum=0; 
+    long sum=0; 
     char a[1000];
     scanf("%d %d\n",&L,&K);
     fgets(a,1000,stdin);
@@ -17,6 +17,7 @@ int main()
 		    sum=10*sum+a[j]-48;
     if(isPrime(sum)) {
         flag=1;
+        printf("%d %d\n", i, a[i]);
         c_print(sum, K);
         break;
     }
@@ -26,7 +27,7 @@ int main()
     return 0;
 }
 
-void c_print(int num, int K) {
+void c_print(long num, int K) {
     int top=0, *stk;
     stk = malloc(K*sizeof(int));
     while(num>0 || K>0){
@@ -40,9 +41,9 @@ void c_print(int num, int K) {
     free(stk);
 }
 
-int isPrime(int a){
+int isPrime(long a){
     if(a<2) return 0;
-    for(int i=2;i*i<=a;i++)
+    for(long i=2;i*i<=a;i++)
 	    if(a%i==0)  return 0;
     return 1;
 }
