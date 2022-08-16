@@ -1,6 +1,5 @@
 #include <stdio.h>
 #include <stdlib.h>
-#pragma region 
 enum PCG {
 	Ping,Cong,Gai
 };
