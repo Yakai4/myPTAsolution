@@ -1,8 +1,6 @@
 /** it has been accepted
  *  final version
 */
-
-
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -23,7 +21,8 @@ int main(void) {
             scanf(" %c", &Questions[i].ans[j]);
 		Questions[i].ans[Questions[i].corretOpt] = '\0';
     }
-int  k,t,score; char x, ansChar[6];
+
+    int  k,t,score; char x, ansChar[6];
     for(int i=0;i<N;i++) {
 		k=0; score = 0; t=0;
 		x = getchar(); x= getchar();
@@ -37,12 +36,12 @@ int  k,t,score; char x, ansChar[6];
                 }
 				ansChar[t] = '\0';
 				t=0;
-            	if(strcmp(ansChar, Questions[k].ans) != 0) 	
-					cnt[k]++;
+            	if(strcmp(ansChar, Questions[k].ans) != 0)  
+                    cnt[k]++;
 				else 
-					score += Questions[k].fullMark;
+				    score += Questions[k].fullMark;
             } else {
-				cnt[k]++;
+			    cnt[k]++;
 				while(x!=')')
 					x = getchar();
 			}
