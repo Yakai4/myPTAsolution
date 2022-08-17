@@ -1,4 +1,4 @@
-/** it has benn accepted
+/** it has been accepted
  *  final version
 */
 
