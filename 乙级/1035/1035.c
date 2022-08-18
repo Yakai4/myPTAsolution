@@ -7,16 +7,16 @@ int min(int, int);
 //打印排序后的数组
 void print(int[], int);
 
-//返回数列中从begin开始最长的递增子列末尾下标的位置
+//返回数列中从 begin 开始最长的递增子列末尾下标的位置
 int getOrder(int[], int, int);
 
-//在being到end下标范围比较origin和sorted是否一致
+//在 begin 到 end 下标范围比较 origin 和 sorted 是否一致
 int arrEqu(int[], int[], int, int);
 
-//插入排序，从begin开始
+//插入排序，从 begin 开始
 void insertSort(int[], int);
 
-//归并排序，间隔为interval
+//归并排序，间隔为 interval
 void mergeSort(int[], int, int);
 
 //返回最小归并间隔
@@ -32,7 +32,7 @@ int main(void)
 	for(int i=0;i<N;i++) 
 		scanf("%d", &sorted[i]);
 	
-	int dist = getOrder(sorted,0,N)+1;		//下标为dist的数不再递增
+	int dist = getOrder(sorted,0,N)+1;		//下标为 dist 的数不再递增
 	
 	if(arrEqu(origin, sorted, dist, N-1)) {
 		printf(("Insertion Sort\n"));
@@ -41,13 +41,10 @@ int main(void)
 	} else {
 		printf("Merge Sort\n");
 		int interval = 1; // getMinInterval(sorted, N);
-		while(!arrEqu(origin, sorted, 0, N-1)){
+		while(!arrEqu(origin, sorted, 0, N-1)) {
 			mergeSort(origin, interval, N);
-			//printf("when interval is %d: ", interval);
-			//print(origin, N);
 			interval*=2;
 		}
-		//printf("%d\n", interval);
 		mergeSort(origin, interval, N);
 		print(origin,N);
 	}
