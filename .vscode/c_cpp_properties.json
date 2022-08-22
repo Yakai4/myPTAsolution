@@ -3,8 +3,9 @@
         {
             "name": "Linux",
             "includePath": [
-             //   "${workspaceFolder}/**",
-            //    "/usr/include"
+            //    "${workspaceFolder}",//当前工作目录
+            //    "${workspaceFolder}/**"//当前工作目录及其子文件夹
+                "/usr/include"
             ],
             "defines": [],
             "compilerPath": "/usr/bin/gcc",
