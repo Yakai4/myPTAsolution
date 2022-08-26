@@ -10,8 +10,8 @@ void my_qsort(struct ren**, int, int);
 
 //50% faster than mine
 int cmp(const void *a, const void *b) {
-	struct ren ** A = (struct ren **) a; 
-	struct ren ** B = (struct ren **) b; 
+	struct ren ** A = (struct ren **) a;
+	struct ren ** B = (struct ren **) b;
     if((*A)->height != (*B)->height)
         return  (*B)->height - (*A)->height;
     return strcmp((*A)->name, (*B)->name);
@@ -34,7 +34,7 @@ int main(void)
 
 	for(int j=0,t=0;j<K;j++) {
 		if(j==0)	m = N - (K-1)*(N/K);
-		else m = N/K;
+		else		m = N/K;
 		for(int i=0,pos=m/2,sign=1;i<m;i++) {
 			pos = m/2 + (i+1)/2*sign;
 			row[pos] = people[t++]->name;
@@ -44,8 +44,8 @@ int main(void)
 			printf("%s",row[i]);
 			if(i<m-1)
 				printf(" ");
-			else 
-				printf("\n"); 
+			else
+				printf("\n");
 		}
 	}
     return 0;
