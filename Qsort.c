@@ -17,12 +17,12 @@ void Qsort(ElemType A[], ElemType L, ElemType R) {
 	swap(&A[L],&A[i]);
 
 	Qsort(A, L,i-1);
-	Qsort((A,i+1,R);
+	Qsort(A,i+1,R);
 }
 
 
 void swap(int *a, int *b) {
-	int temp = a;
-	a = b;
-	b = temp;
+	int temp = *a;
+	*a = *b;
+	*b = temp;
 }

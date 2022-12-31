@@ -1,13 +1,17 @@
-//该版本段错误。。应把数组存放在堆区
+/*
+该版本通过所有测试点。内存占用46780KB，平均用时80ms
+改进方向：使用链表存储栈
+*/
 #define MAX 100000
 #include <stdio.h>
 //class stack
     typedef struct {
-        int data[MAX];
+        int *data;
         int top;
     } Stack;
     void init(Stack *S) {
         S->top = -1;
+		S->data = (int*) malloc(sizeof(int) * MAX);
     }
     void push(Stack *S,int num) {
         S->data[++S->top] = num;

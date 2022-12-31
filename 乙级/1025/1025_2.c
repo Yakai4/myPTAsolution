@@ -1,13 +1,17 @@
-//该版本段错误。。应把数组存放在堆区
+/*
+该版本通过所有测试点。内存占用40788KB，平均用时65ms
+*/
 #define MAX 100000
 #include <stdio.h>
+#include <stdlib.h>
 //class stack
     typedef struct {
-        int data[MAX];
+        int *data;
         int top;
     } Stack;
-    void init(Stack *S) {
+    void init(Stack *S, int size) {
         S->top = -1;
+		S->data = (int*) malloc(sizeof(int) * size);
     }
     void push(Stack *S,int num) {
         S->data[++S->top] = num;
@@ -32,24 +36,22 @@ int main() {
         a[ind].next =next;
     }
 
-    ind = beginAddr;
     int valid=0;
-    Stack S;init(&S);   
+    ind = beginAddr;
+    Stack S;init(&S, N);   
+
     while(ind!=-1) {
         push(&S,ind);
         ind = a[ind].next;
         valid++;
     }   
-    /*
-    for(int i=0;i<valid;i++) {
-        printf("%d: %d\n", i,a[S.data[i]].data);
-    }*/
+
     int div = valid/K, mod = valid%K;
     Stack Stks[div],R;
     for(int i=0;i<div;i++)
-        init(&Stks[i]);
+        init(&Stks[i], div);
     if(mod != 0) {
-        init(&R);
+        init(&R, mod);
         for(int i=0;i<mod;i++)
             push(&R, pop(&S));
     }
@@ -83,5 +85,4 @@ int main() {
 33218 3 00000
 99999 5 68237
 12309 2 33218
-
 */
