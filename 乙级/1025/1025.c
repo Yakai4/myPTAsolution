@@ -68,7 +68,7 @@ int main() {
     }
 
     for(int i=valid-1;i>0;i--) {
-        a[S.data[i]].next = pop(&S);
+        //a[S.data[i]].next = pop(&S);
         printf("%05d %d %05d\n", S.data[i], a[S.data[i]].data, S.data[i-1]);
     }
     printf("%05d %d %d\n", S.data[0], a[S.data[0]].data, -1);
